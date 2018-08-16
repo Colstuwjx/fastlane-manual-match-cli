@@ -3,9 +3,9 @@ Simple CLI for manual match certificates and profiles.
 
 ## Usage
 
-> ruby ./cli.rb sync
+The CLI ONLY support `sync` feature at this time, and we can just type `ruby ./cli.rb sync` to start our upload process!
 
-We can use `sync` do fastlane match certificates and profiles upload by manually, help message shows below:
+`sync` does fastlane match certificates and profiles upload by manually, help message shows below:
 
 ```
 NAME:
@@ -55,8 +55,28 @@ export MATCH_CERT_P12_PATH="Input syncing fastlane cert private key(p12) absolut
 export MATCH_PROFILE_PATH="Input syncing fastlane profile absolute file path here."
 ```
 
+After passed the options, it will start sync process and we maybe see the outputs like below:
+
+```
+...
+[16:25:10]: Cloning remote git repo...
+[16:25:10]: If cloning the repo takes too long, you can use the `clone_branch_directly` option in match.
+[16:25:13]: 🔓  Successfully decrypted certificates repo
+[16:25:13]: 🔒  Successfully encrypted certificates repo
+[16:25:13]: Pushing changes to remote git repo...
+[16:25:14]: Successfully synced certs and profiles to remote repo
+[16:25:14]: 🍺
+```
+
+As you seen, the certificates and profiles has been synced into remote match repo!
+Enjoy!
+
+## Warning
+
+This cli will sync the selected certificates and profiles into remote repo at every time and maybe overwrite the original one, even you selected a wrong file!
+
+Be carefully to type `sync`, until you exactly know what you are doing!
+
 ## Acknowledgments
 
 Thanks [JCMais](https://github.com/JCMais)'s [blog post](https://medium.com/@jonathancardoso/using-fastlane-match-with-existing-certificates-without-revoking-them-a325be69dac6), and hope this cli frees you of heavy ios build jobs!
-
-Enjoy!
