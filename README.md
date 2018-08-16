@@ -55,4 +55,8 @@ export MATCH_CERT_P12_PATH="Input syncing fastlane cert private key(p12) absolut
 export MATCH_PROFILE_PATH="Input syncing fastlane profile absolute file path here."
 ```
 
+## Acknowledgments
+
+Thanks [JCMais](https://github.com/JCMais)'s [blog post](https://medium.com/@jonathancardoso/using-fastlane-match-with-existing-certificates-without-revoking-them-a325be69dac6), and hope this cli frees you of heavy ios build jobs!
+
 Enjoy!
